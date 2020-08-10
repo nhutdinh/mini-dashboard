@@ -1,0 +1,14 @@
+.data-table {
+  padding: 1.5rem;
+  table {
+    width: 100%;
+    td,
+    th {
+      padding: 0.625rem;
+    }
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+}

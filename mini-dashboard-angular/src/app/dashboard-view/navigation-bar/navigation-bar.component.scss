@@ -1,0 +1,27 @@
+.navigation-bar {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    h1 {
+      padding: 0 0.5rem;
+    }
+  }
+
+  &__sidenav-container {
+    flex: 1;
+  }
+  &--is-mobile {
+    .navigation-bar__toolbar {
+      position: fixed;
+      z-index: 2;
+    }
+    .navigation-bar__sidenav-container {
+      flex: 1 0 auto;
+    }
+  }
+}

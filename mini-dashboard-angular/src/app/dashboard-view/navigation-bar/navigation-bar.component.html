@@ -1,0 +1,21 @@
+<div class="navigation-bar__container">
+
+    <mat-toolbar color="primary" class="navigation-bar__toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>{{snav.opened ? "close" : "menu"}}</mat-icon>
+        </button>
+        <h1>{{pageTitle}}</h1>
+    </mat-toolbar>
+    <mat-sidenav-container class="navigation-bar__sidenav-container">
+        <mat-sidenav #snav [mode]="'over'" fixedTopGap="56">
+            <mat-nav-list>
+                <a mat-list-item routerLink="{{nav.path}}" (click)="snav.toggle()"
+                    *ngFor="let nav of fillerNav">{{nav.name}}</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

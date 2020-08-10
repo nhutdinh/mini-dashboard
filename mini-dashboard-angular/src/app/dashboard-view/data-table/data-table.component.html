@@ -1,0 +1,42 @@
+<div class="data-table">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="input your query...">
+
+        </mat-form-field>
+    </form>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="urn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> urn </th>
+            <td mat-cell *matCellDef="let element"> {{element.urn}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="created_at">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> created_at </th>
+            <td mat-cell *matCellDef="let element"> {{element.created_at}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="updated_at">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> updated_at </th>
+            <td mat-cell *matCellDef="let element"> {{element.updated_at}} </td>
+        </ng-container>
+        <ng-container matColumnDef="content">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> content </th>
+            <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+        </ng-container>
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
